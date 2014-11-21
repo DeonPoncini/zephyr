@@ -21,12 +21,9 @@ int rollDice(int sides)
 Coin flipCoin()
 {
     auto flip = rollDice(2);
-    if (flip == 1)
-    {
+    if (flip == 1) {
         return Coin::HEADS;
-    }
-    else
-    {
+    } else {
         return Coin::TAILS;
     }
 }
