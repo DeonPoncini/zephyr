@@ -1,13 +1,7 @@
 cmake_minimum_required(VERSION 2.8)
 project(libutil)
 
-################################
-# Compiler setup
-################################
-
-add_definitions(-Wall)
-
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+set(UTIL_VERSION "0.0.1")
 
 ################################
 # Locate source
@@ -25,3 +19,15 @@ include_directories(include/util)
 add_library(util SHARED
     ${SRC}
     ${INCLUDES})
+
+################################
+# Export library
+################################
+
+export_project(
+    NAME libutil
+    INCLUDES ${CMAKE_CURRENT_LIST_DIR}/include
+    LIBS util
+    VERSION ${UTIL_VERSION}
+)
+
