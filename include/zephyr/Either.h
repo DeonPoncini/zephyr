@@ -1,9 +1,9 @@
-#ifndef UTIL_EITHER_H
-#define UTIL_EITHER_H
+#ifndef ZEPHYR_EITHER_H
+#define ZEPHYR_EITHER_H
 
 #include <utility>
 
-namespace util
+namespace zephyr
 {
 
 template <typename L, typename R>

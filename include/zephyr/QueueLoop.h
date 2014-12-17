@@ -1,11 +1,11 @@
-#ifndef UTIL_QUEUELOOP_H
-#define UTIL_QUEUELOOP_H
+#ifndef ZEPHYR_QUEUELOOP_H
+#define ZEPHYR_QUEUELOOP_H
 
 #include <condition_variable>
 #include <deque>
 #include <mutex>
 
-namespace util
+namespace zephyr
 {
 
 template <typename T>
@@ -87,7 +87,6 @@ T QueueLoop<T>::read()
     mQueue.pop_front();
     return t;
 }
-
 
 }
 

@@ -1,6 +1,6 @@
-#include "Random.h"
+#include <zephyr/Random.h>
 
-namespace util
+namespace zephyr
 {
 namespace random
 {

@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8)
-project(libutil)
+project(zephyr)
 
-set(UTIL_VERSION "0.0.1")
+set(ZEPHYR_VERSION "0.0.1")
 
 ################################
 # Locate source
@@ -10,13 +10,12 @@ file(GLOB_RECURSE INCLUDES include/*.h)
 file(GLOB_RECURSE SRC src/*.cpp)
 
 include_directories(include)
-include_directories(include/util)
 
 ################################
 # Build targets
 ################################
 
-add_library(util SHARED
+add_library(zephyr SHARED
     ${SRC}
     ${INCLUDES})
 
@@ -25,9 +24,9 @@ add_library(util SHARED
 ################################
 
 export_project(
-    NAME libutil
+    NAME zephyr
     INCLUDES ${CMAKE_CURRENT_LIST_DIR}/include
-    LIBS util
-    VERSION ${UTIL_VERSION}
+    LIBS zephyr
+    VERSION ${ZEPHYR_VERSION}
 )
 

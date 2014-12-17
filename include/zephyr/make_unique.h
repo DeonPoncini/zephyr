@@ -1,11 +1,11 @@
-#ifndef UTIL_MAKE_UNIQUE_H
-#define UTIL_MAKE_UNIQUE_H
+#ifndef ZEPHYR_MAKE_UNIQUE_H
+#define ZEPHYR_MAKE_UNIQUE_H
 
 #include <memory>
 #include <type_traits>
 #include <utility>
 
-namespace util
+namespace zephyr
 {
 
 template <typename T, typename... Args>

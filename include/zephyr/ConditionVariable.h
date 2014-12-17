@@ -1,10 +1,10 @@
-#ifndef UTIL_CONDITIONVARIABLE_H
-#define UTIL_CONDITIONVARIABLE_H
+#ifndef ZEPHYR_CONDITIONVARIABLE_H
+#define ZEPHYR_CONDITIONVARIABLE_H
 
 #include <condition_variable>
 #include <mutex>
 
-namespace util
+namespace zephyr
 {
 
 template <typename T>
@@ -37,6 +37,5 @@ private:
 };
 
 }
-
 
 #endif

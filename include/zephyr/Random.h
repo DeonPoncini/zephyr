@@ -1,9 +1,9 @@
-#ifndef UTIL_RANDOM_H
-#define UTIL_RANDOM_H
+#ifndef ZEPHYR_RANDOM_H
+#define ZEPHYR_RANDOM_H
 
 #include <random>
 
-namespace util
+namespace zephyr
 {
 namespace random
 {
