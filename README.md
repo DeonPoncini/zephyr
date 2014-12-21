@@ -26,3 +26,4 @@ Usage
 * make\_unique: C++14 implementation of make\_unique
 * QueueLoop: Push data between threads on a queue
 * Random: Simple dice/coin based random functions
+* Timestamp: Log timestamps at different resolutions
