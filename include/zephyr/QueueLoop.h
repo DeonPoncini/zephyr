@@ -4,6 +4,7 @@
 #include <condition_variable>
 #include <deque>
 #include <mutex>
+#include <utility>
 
 namespace zephyr
 {
@@ -18,7 +19,7 @@ public:
     void terminate();
 
     bool more() const;
-    void write(T t);
+    void write(T&& t);
     T read();
 
 private:
@@ -68,12 +69,10 @@ bool QueueLoop<T>::more() const
 }
 
 template <typename T>
-void QueueLoop<T>::write(T t)
+void QueueLoop<T>::write(T&& t)
 {
-    {
-        std::unique_lock<std::mutex> l(mReadMutex);
-        mQueue.push_back(std::move(t));
-    }
+    std::unique_lock<std::mutex> l(mReadMutex);
+    mQueue.emplace_back(std::move(t));
     // notify the waiting thread to continue
     mWaitVar = true;
     mCondVar.notify_all();
@@ -83,7 +82,7 @@ template <typename T>
 T QueueLoop<T>::read()
 {
     std::unique_lock<std::mutex> l(mReadMutex);
-    auto t = mQueue.front();
+    auto t = std::move(mQueue.front());
     mQueue.pop_front();
     return t;
 }
