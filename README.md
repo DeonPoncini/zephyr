@@ -27,3 +27,8 @@ Usage
 * QueueLoop: Push data between threads on a queue
 * Random: Simple dice/coin based random functions
 * Timestamp: Log timestamps at different resolutions
+
+License
+-------
+Copyright (c) 2014 Deon Poncini.
+See the LICENSE file for license rights and limitations (MIT)
