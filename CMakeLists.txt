@@ -15,7 +15,7 @@ include_directories(include)
 # Build targets
 ################################
 
-add_library(zephyr SHARED
+add_library(zephyr
     ${SRC}
     ${INCLUDES})
 
