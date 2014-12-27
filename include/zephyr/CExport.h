@@ -1,12 +1,21 @@
 #ifndef ZEPHYR_CEXPORT_H
 #define ZEPHYR_CEXPORT_H
 
+/* declare a namespaced name */
 #ifdef __cplusplus
-#define Z_VAR(ns, n) n
+#define ZD(ns)
 #else
-#define Z_VAR(ns, n) ns ## _ ## n
+#define ZD(ns) ns_
 #endif
 
+/* use a namespaced name */
+#ifdef __cplusplus
+#define ZU(ns) ns::
+#else
+#define ZU(ns) ns_
+#endif
+
+/* declare a namespace */
 #ifdef __cplusplus
 #define Z_NS_START(n) namespace n {
 #define Z_NS_END }
@@ -15,22 +24,11 @@
 #define Z_NS_END
 #endif
 
+/* enum class vs enum */
 #ifdef __cplusplus
-#define Z_ENUM_CLASS(ns, n) enum class n
+#define Z_ENUM_CLASS enum class
 #else
-#define Z_ENUM_CLASS(ns, n) enum Z_VAR(ns, n)
-#endif
-
-#ifdef __cplusplus
-#define Z_ENUM(ns, n) enum n
-#else
-#define Z_ENUM(ns, n) enum Z_VAR(ns, n)
-#endif
-
-#ifdef __cplusplus
-#define Z_STRUCT(ns, n) struct n
-#else
-#define Z_STRUCT(ns, n) struct Z_VAR(ns, n)
+#define Z_ENUM_CLASS enum
 #endif
 
 #endif
