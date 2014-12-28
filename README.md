@@ -21,12 +21,15 @@ remote
 
 Usage
 -----
+* CExport: Helpers to convert namespaces for C code
 * ConditionVariable: Pass data between threads with locking
+* cstring: Helper functions to convert between std::string and c strings
 * Either: An either type for built in types
 * make\_unique: C++14 implementation of make\_unique
 * QueueLoop: Push data between threads on a queue
 * Random: Simple dice/coin based random functions
 * Timestamp: Log timestamps at different resolutions
+* to\_string: C++11 implementation of std::to\_string
 
 License
 -------
