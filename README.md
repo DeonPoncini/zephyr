@@ -21,8 +21,8 @@ remote
 
 Usage
 -----
+* Array2D: 2D array class
 * Bitproxy: Represent a bitfield with array like access
-* CExport: Helpers to convert namespaces for C code
 * ConditionVariable: Pass data between threads with locking
 * cstring: Helper functions to convert between std::string and c strings
 * Either: An either type for built in types
